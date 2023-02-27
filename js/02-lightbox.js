@@ -3,9 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 //! Change code below this line
 
 const galleryContainer = document.querySelector(".gallery");
-const galleryCardsSet = createGallery(galleryItems);
+const images = createImageGallery(galleryItems);
 
-function createGallery(galleryItems) {
+function createImageGallery(galleryItems) {
   return galleryItems
     .map(({ original, preview, description }) => {
       return `<div class="gallery__item">
@@ -17,7 +17,7 @@ function createGallery(galleryItems) {
     .join("");
 }
 
-galleryContainer.insertAdjacentHTML("beforeend", galleryCardsSet);
+galleryContainer.insertAdjacentHTML("beforeend", images);
 
 const lightbox = new SimpleLightbox(".gallery a", {
   caption: true,
