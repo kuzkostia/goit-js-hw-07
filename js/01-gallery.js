@@ -3,7 +3,7 @@ import { galleryItems } from "./gallery-items.js";
 //! Change code below this line
 
 const galleryContainer = document.querySelector(".gallery");
-const images = createImageGallery(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", createImageGallery(galleryItems));
 
 function createImageGallery(galleryItems) {
   return galleryItems
@@ -24,7 +24,7 @@ function createImageGallery(galleryItems) {
     .join("");
 }
 
-galleryContainer.insertAdjacentHTML("beforeend", images);
+
 galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {

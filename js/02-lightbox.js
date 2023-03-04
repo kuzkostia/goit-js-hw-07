@@ -3,7 +3,7 @@ import { galleryItems } from "./gallery-items.js";
 //! Change code below this line
 
 const galleryContainer = document.querySelector(".gallery");
-const images = createImageGallery(galleryItems);
+galleryContainer.insertAdjacentHTML("beforeend", createImageGallery(galleryItems));
 
 function createImageGallery(galleryItems) {
   return galleryItems
@@ -16,8 +16,6 @@ function createImageGallery(galleryItems) {
     })
     .join("");
 }
-
-galleryContainer.insertAdjacentHTML("beforeend", images);
 
 const lightbox = new SimpleLightbox(".gallery a", {
   caption: true,
